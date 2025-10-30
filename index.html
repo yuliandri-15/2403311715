@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>My Web Page</title>
+  <script>
+    class Mobil {
+      constructor(tipe) {
+        this.tipe = tipe;
+        this.ban = 4;
+        this.spion = 2;
+        this.warna = "merah";
+      }
+
+      info() {
+        return `
+          Tipe Mobil : ${this.tipe}
+          Berwarna : ${this.warna}
+          Jumlah Ban : ${this.ban}
+          Jumlah Spion : ${this.spion}
+        `;
+      }
+    }
+
+    class MobilBalap extends Mobil {
+      constructor(tipe, kecepatanMaksimal) {
+        super(tipe);
+        this.kecepatanMaksimal = kecepatanMaksimal;
+      }
+    }
+
+    const mobil1 = new Mobil("Sedan");
+    console.log(mobil1.info());
+
+    delete mobil1.spion;
+    console.log(mobil1.info());
+
+    const mobil2 = new MobilBalap("Ferarri", "100 KM");
+    console.log(mobil2.info());
+  </script>
+</head>
+<body>
+
+</body>
+</html>
